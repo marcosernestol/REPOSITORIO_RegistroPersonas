@@ -1,0 +1,372 @@
+ /* -----------------------  Estilos generales -------------------   */
+ /* header*/
+ 
+ header {
+     position: relative;
+     width: 1440px;
+     height: 135px;
+     left: 0px;
+     top: 3px;
+     background: #4E879F;
+     border-radius: 30px;
+ }
+ 
+ section {
+     position: relative;
+     width: 1440px;
+     height: 770px;
+     left: 0px;
+     top: 2px;
+     background: #EBEBEB;
+     border-radius: 30px;
+ }
+ 
+ footer {
+     position: relative;
+     width: 1440px;
+     height: 107px;
+     left: 0px;
+     top: 12px;
+     background: #4E879F;
+     border-radius: 30px;
+ }
+ /* -----------------------  el punto hace referencia a clases .class  -------------------   */
+ 
+ .perfilUsuario {
+     position: absolute;
+     width: 60px;
+     height: 62px;
+     left: 1317px;
+     top: 38px;
+ }
+ 
+ .menuInicial {
+     position: absolute;
+     width: 634px;
+     height: 55px;
+     left: 424px;
+     top: 45px;
+     background: #C4C4C4;
+ }
+ 
+ #lblRegistroDePersonas {
+     position: absolute;
+     width: 236px;
+     height: 32px;
+     left: 548px;
+     top: 3px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000000;
+ }
+ 
+ #imgFoto {
+     position: absolute;
+     width: 206px;
+     height: 250px;
+     left: 42px;
+     top: 25px;
+     background: url(.jpg), #C4C4C4;
+ }
+ 
+ #lblRegistroDePersonas {
+     position: absolute;
+     width: 236px;
+     height: 32px;
+     left: 548px;
+     top: 3px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000000;
+ }
+ 
+ #lblNombreUnicoDeUsuario {
+     position: absolute;
+     width: 160px;
+     height: 16px;
+     left: 288px;
+     top: 96px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #inputNombreUnicoDeUsuario {
+     position: absolute;
+     width: 277px;
+     height: 28px;
+     left: 460px;
+     top: 88px;
+     border: 1px solid #000000;
+     box-sizing: border-box;
+ }
+ 
+ #lblNombreCompleto {
+     position: absolute;
+     width: 157px;
+     height: 17px;
+     left: 288px;
+     top: 138px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     /* identical to box height */
+     color: #000000;
+ }
+ 
+ #inputNombreCompleto {
+     position: absolute;
+     width: 277px;
+     height: 28px;
+     left: 460px;
+     top: 131px;
+     border: 1px solid #000000;
+     box-sizing: border-box;
+ }
+ 
+ #lblCorreoelectronico {
+     position: absolute;
+     width: 115px;
+     height: 16px;
+     left: 288px;
+     top: 184px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #inputCorreoElectronico {
+     position: absolute;
+     width: 277px;
+     height: 28px;
+     left: 460px;
+     top: 174px;
+     border: 1px solid #000000;
+     box-sizing: border-box;
+ }
+ 
+ #lblPassword {
+     position: absolute;
+     width: 61px;
+     height: 16px;
+     left: 288px;
+     top: 226px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #inputPassword {
+     position: absolute;
+     width: 277px;
+     height: 28px;
+     left: 460px;
+     top: 225px;
+     border: 1px solid #000000;
+     box-sizing: border-box;
+ }
+ 
+ #lblGenero {
+     position: absolute;
+     width: 44px;
+     height: 16px;
+     left: 288px;
+     top: 279px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #switchGenero {
+     position: absolute;
+     width: 284px;
+     height: 51px;
+     left: 460px;
+     bottom: 458px;
+ }
+ 
+ #lblEstadoCivil {
+     position: absolute;
+     width: 71px;
+     height: 16px;
+     left: 288px;
+     top: 333px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #radioGroupEstadoCivil {
+     position: absolute;
+     width: 284px;
+     height: 121px;
+     left: 460px;
+     top: 320px;
+ }
+ 
+ #lblFechaDeNacimiento {
+     position: absolute;
+     width: 132px;
+     height: 16px;
+     left: 288px;
+     top: 451px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #calendarFechaDeNacimiento {
+     position: absolute;
+     width: 277px;
+     height: 29px;
+     left: 460px;
+     top: 445px;
+ }
+ 
+ #lblHoraDeRegistro {
+     position: absolute;
+     width: 101px;
+     height: 16px;
+     left: 288px;
+     top: 484px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #timeHoraDeRegistro {
+     position: absolute;
+     width: 277px;
+     height: 28px;
+     left: 460px;
+     top: 474px;
+ }
+ 
+ #lblEstadoDondeNacio {
+     position: absolute;
+     width: 126px;
+     height: 16px;
+     left: 794px;
+     top: 89px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #comboEstadoDondeNacio {
+     position: absolute;
+     width: 322px;
+     height: 34px;
+     left: 942px;
+     top: 88px;
+     border: 1px solid #000000;
+     box-sizing: border-box;
+ }
+ 
+ #lblDomicilio {
+     position: absolute;
+     width: 59px;
+     height: 16px;
+     left: 804px;
+     top: 132px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #txtareaDomicilio {
+     position: absolute;
+     width: 325px;
+     height: 81px;
+     left: 942px;
+     top: 132px;
+     border: 1px solid #000000;
+     box-sizing: border-box;
+ }
+ 
+ #divMapa {
+     position: absolute;
+     width: 559px;
+     height: 268px;
+     left: 813px;
+     top: 225px;
+     /* background: url(.png); */
+ }
+ 
+ #tabularListadoDePersonasRegistradas {
+     position: relative;
+     width: 201px;
+     height: 16px;
+     left: 598px;
+     top: 15px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 16px;
+     color: #000000;
+ }
+ 
+ #frameListadoDePersonasRegistradas {
+     position: relative;
+     width: 1341px;
+     height: 245px;
+     left: 43px;
+     top: 515px;
+     color: #000000;
+ }
+ 
+ #botonGuardar {
+     position: relative;
+     width: 117px;
+     height: 47px;
+     left: 944px;
+     top: 26px;
+     background: #C4C4C4;
+     border-radius: 30px;
+ }
+ 
+ #botonCancelar {
+     position: relative;
+     width: 117px;
+     height: 47px;
+     left: 1099px;
+     top: 26px;
+     background: #C4C4C4;
+     border-radius: 30px;
+ }

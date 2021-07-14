@@ -1,0 +1,14 @@
+{
+  "name": "registropersonas",
+  "version": "1.0.0",
+  "description": "Mi primer Proyecto Node.js para maquetado",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcos Lozano",
+  "license": "ISC",
+  "dependencies": {
+    "ol": "^6.5.0"
+  }
+}

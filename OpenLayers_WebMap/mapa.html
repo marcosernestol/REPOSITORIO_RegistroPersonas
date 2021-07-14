@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <!-- aqui van todos METADATOS , que usa el navegador  -->
+    <title>Mapa</title>
+    <!-- es el titulo para la página -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Primer Proyecto de entenamiento MELB" />
+    <meta name="author" content="Marcos Lozano" />
+    <meta name="keywords" content="poner palabras clave para los navegadores, serapadas por coma">
+
+    <link rel="stylesheet" href="../index_estilos.css">
+    <link rel="stylesheet" href="./lib/OpenLayers/ol.css">
+    <link rel="stylesheet" href="./mapa_estilos.css">
+
+</head>
+
+
+
+<body>
+    <!-- todo lo que queremos que vea el usuario , Incluyendo el Esquema de HTML5 : header,nav,Section,aside y footer -->
+
+    <header>
+        <img src="../imagenes/logo.png" alt="Aqui va Logo" id="frameLogo">
+        <img class="perfilUsuario" src="../imagenes/perfilUsuario.png" alt="Imagen del usuario" id="framePerfilUsuario">
+    </header>
+
+    <nav class="menuInicial">
+        <ul>
+            <li><a href="../index.html">Inicial</a></li>
+            <li><a href="../pagina2.html">Pagina2</a></li>
+            <li><a href="./OpenLayers_WebMap/mapa.html">Mi Mapa</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- El curso dice que aqui en el BODY pongamos los scripts ;  NO SE POR QUE!!. ¿no debería ser en el ancabezado ? -->
+    <script src='./lib/OpenLayers/ol.js'></script>
+    <script src='./mapa.js'></script>
+
+
+    <section>
+
+        <div id='mi_mapa' class='map'></div>
+
+    </section>
+
+
+    <footer>
+        <input type="button" value="Guardar" href="" id="botonGuardar">
+        <input type="button" value="Cancelar" href="" id="botonCancelar">
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* aunque También pudo ser con la CLASSE MAP  o sea porer   .map{   en lugar de #mi_mapa  ( que indica el identificador)  */
+
+#mi_mapa {
+    height: 50vh;
+    width: 50vh;
+    border: 5px outset red;
+    background-color: lightblue;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- Utiliza la ultima version de html , que es la 5 -->
+<!-- Utuliza Alt+Z para que se vea todo el contenido en la página -->
+
+
+<!-- 
+        ENLACES MENCIONADOS en este curso y muy recomendados 
+            https://www.youtube.com/watch?v=rbuYtrNUxg4   curso de HTML
+            https://www.youtube.com/watch?v=W6GTDfrWjXs   Curso siguiente de css
+
+            https://developer.mozilla.org/es/docs...
+            https://www.w3schools.com/html/
+-->
+
+<html lang="es">
+<!-- html es la Etiqueta principal, para una CORRECTA ESTRUCTURA a la página   -->
+<!-- lang induca lenguaje de la página ; Pero SOLO funciona para cuando BUSCAN TU PÁGINA EN ALGUN NAVEGADOR. Pero no cambia tu codigo de idioma ni tu IDE ni nada, tampoco las insicaciones que despliega el navegador , nada de eso -->
+
+
+
+<head>
+    <!-- aqui van todos METADATOS , que usa el navegador  -->
+    <title>Registro Personas</title>
+    <!-- es el titulo para la página -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Primer Proyecto de entenamiento MELB" />
+    <meta name="author" content="Marcos Lozano" />
+    <meta name="keywords" content="poner palabras clave para los navegadores, serapadas por coma">
+
+    <link rel="stylesheet" href="index_estilos.css">
+</head>
+
+
+
+
+<body>
+    <!-- todo lo que queremos que vea el usuario , Incluyendo el Esquema de HTML5 : header,nav,Section,aside y footer -->
+
+    <header>
+        <img src="imagenes/logo.png" alt="Aqui va Logo" id="frameLogo">
+        <img class="perfilUsuario" src="imagenes/perfilUsuario.png" alt="Imagen del usuario" id="framePerfilUsuario">
+    </header>
+
+    <nav class="menuInicial">
+        <ul>
+            <li><a href="index.html">Inicial</a></li>
+            <li><a href="pagina2.html">Pagina2</a></li>
+            <li><a href="./OpenLayers_WebMap/mapa.html">Mi Mapa</a></li>
+        </ul>
+    </nav>
+
+
+    <section>
+        <h3 id="lblRegistroDePersonas">Registro de personas</h3>
+
+        <img src="imagenes/foto.png" alt="" id="imgFoto">
+
+
+        <label for="Nombre Unico de Usuario" id="lblNombreUnicoDeUsuario">Nombre Unico de Usuario</label>
+        <input type="text" name="" id="inputNombreUnicoDeUsuario">
+
+        <label for="Nombre Completo" id="lblNombreCompleto">Nombre Completo</label>
+        <input type="text" name="" id="inputNombreCompleto">
+
+        <label for="Correo electrónico" id="lblCorreoelectronico">Correo Electrónico</label>
+        <input type="email" name="" id="inputCorreoElectronico">
+
+        <label for="password" id="lblPassword">password</label>
+        <input type="password" name="" id="inputPassword">
+
+        <label for="genero" id="lblGenero">genero</label>
+        <!-- <input type="checkbox" name="" id="switchGenero"> -->
+        <img id="switchGenero" src="imagenes/switchGenero.png" alt="Aquí va un switch de Género">
+
+        <label for="Estado Civil" id="lblEstadoCivil">Estado Civil</label>
+        <!-- <input type="text" name="" id="radioGroupEstadoCivil"> -->
+        <img id="radioGroupEstadoCivil" src="imagenes/radioGroupEstadoCivil.png" alt="Aquí va radiogrup de Estado Civil">
+
+        <label for="Fecha de Nacimiento" id="lblFechaDeNacimiento">Fecha de Nacimiento</label>
+        <input type="date" name="" id="calendarFechaDeNacimiento">
+
+        <label for="Hora de Registro" id="lblHoraDeRegistro">Hora de Registro</label>
+        <input type="time" name="" id="timeHoraDeRegistro">
+
+
+
+
+        <label for="Estado donde nació" id="lblEstadoDondeNacio">Estado donde Nació</label>
+        <select name="" id="comboEstadoDondeNacio"> 
+            <option value="">Aguascalientes</option>
+            <option value="">Baja California</option>
+            <option value="">Coahuila</option>
+            <option value="">Durango</option>
+        </select>
+
+        <label for="Domicilio" id="lblDomicilio">Domicilio</label>
+        <textarea name="" id="txtareaDomicilio" cols="30" rows="10"></textarea>
+
+        <div id="divMapa">
+            <img src="imagenes/mapa.png" alt="Mapa">
+        </div>
+
+
+        <table border="1" id="frameListadoDePersonasRegistradas">
+            <caption id="lblListadoDePersonasRegistradas">Lista de Personas Registradas</caption>
+            <tr>
+                <th>nombreUnicoDeUsuario</th>
+                <th>nombreCompleto</th>
+                <th>correoElectronico</th>
+                <th>password</th>
+                <th>genero</th>
+                <th>estadoCivil</th>
+                <th>fechaDeNacimiento</th>
+                <th>horaDeRegistro</th>
+                <th>esatadoDondeNacio</th>
+                <th>domicilio</th>
+                <th>x</th>
+                <th>y</th>
+                <th>foto</th>
+            </tr>
+            <tr>
+                <td>Dato A1</td>
+                <td>Dato A2</td>
+                <td>Dato A3</td>
+                <td>Dato A4</td>
+                <td>Dato A5</td>
+                <td>Dato A6</td>
+                <td>Dato A7</td>
+                <td>Dato A8</td>
+                <td>Dato A9</td>
+                <td>Dato A10</td>
+                <td>Dato A11</td>
+                <td>Dato A12</td>
+                <td>Dato A13</td>
+            </tr>
+            <tr>
+                <td>Dato B1</td>
+                <td>Dato B2</td>
+                <td>Dato B3</td>
+                <td>Dato B4</td>
+                <td>Dato B5</td>
+                <td>Dato B6</td>
+                <td>Dato B7</td>
+                <td>Dato B8</td>
+                <td>Dato B9</td>
+                <td>Dato B10</td>
+                <td>Dato B11</td>
+                <td>Dato B12</td>
+                <td>Dato B13</td>
+            </tr>
+            <tr>
+                <td>Dato C1</td>
+                <td>Dato C2</td>
+                <td>Dato C3</td>
+                <td>Dato C4</td>
+                <td>Dato C5</td>
+                <td>Dato C6</td>
+                <td>Dato C7</td>
+                <td>Dato C8</td>
+                <td>Dato C9</td>
+                <td>Dato C10</td>
+                <td>Dato C11</td>
+                <td>Dato C12</td>
+                <td>Dato C13</td>
+            </tr>
+        </table>
+
+    </section>
+
+
+    <footer>
+        <input type="button" value="Guardar" href="" id="botonGuardar">
+        <input type="button" value="Cancelar" href="" id="botonCancelar">
+
+    </footer>
+
+</body>
+
+
+
+
+</html>
