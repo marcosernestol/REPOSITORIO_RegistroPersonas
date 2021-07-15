@@ -3,3 +3,5 @@ será ignorado por  git.
 
 por ejemplo este archivo "Mis_Notas_a_Ignorar.txt"  
 lo va a ignorar porque lo puse dentro del archivo .gitignore
+
+aunque haga cambios en este archivo, no lo debe tomar en cuenta.
