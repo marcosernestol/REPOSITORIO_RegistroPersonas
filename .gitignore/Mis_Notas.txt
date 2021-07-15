@@ -1,1 +1,0 @@
-Se supone que lo que ponga dentro del  directorio  ".gitignore" será ignorado por  git.
