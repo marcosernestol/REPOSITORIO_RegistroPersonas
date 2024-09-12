@@ -1,0 +1,47 @@
+ /* -----------------------  Estilos generales -------------------   */
+ /* header*/
+ 
+ header {
+     position: relative;
+     width: 1440px;
+     height: 135px;
+     left: 0px;
+     top: 3px;
+     background: #9f4e80;
+     border-radius: 30px;
+ }
+ 
+ section {
+     position: relative;
+     width: 1440px;
+     height: 770px;
+     left: 0px;
+     top: 2px;
+     background: #c9b0b0;
+     border-radius: 30px;
+ }
+ 
+ footer {
+     position: relative;
+     width: 1440px;
+     height: 107px;
+     left: 0px;
+     top: 12px;
+     background: #9f7b4e;
+     border-radius: 30px;
+ }
+/* -----------------------  el punto hace referencia a clases .class  -------------------   */
+/* -----------------------  el "Gato" hace referencia al ID del elemento TAG -------------------   */
+ 
+ 
+ 
+ #botonGuardar {
+     position: relative;
+     width: 117px;
+     height: 47px;
+     left: 944px;
+     top: 26px;
+     background: #C4C4C4;
+     border-radius: 30px;
+ }
+ 
