@@ -197,6 +197,7 @@ calculadora(2, 5, false); // OJO, si le paso true, entonces imprimirá en Pantal
 
 
 // Parametros REST y SPREAD
+// El parámetro REST se utiiza cuando NO SAMEBOS CUANTOS PARÁMETROS VAN A LLEGAR
 function listadoFrutas(fruta1, fruta2, ...resto_de_frutas){
 	console.log("Fruta 1: ", fruta1);
 	console.log("Fruta 2: ", fruta2);
@@ -204,16 +205,22 @@ function listadoFrutas(fruta1, fruta2, ...resto_de_frutas){
 }
 
 listadoFrutas("Naranja", "Manzana", "Sandia", "Pera", "Melon", "Coco");
-
+// El parámetro SPREAD se utiliza al mandar parámetros
+// es como decir TODOS los elementos de un arreglo pasalos uno a uno como parámetros
 var frutas = ["Naranja", "Manzana"];
 listadoFrutas( ...frutas, "Sandia", "Pera", "Melon", "Coco");
 
 
 
 
-// Funciones anonimas
-// Es una función que no tiene nombre
 
+
+
+     // +++++++++++++++++++ Importantísimo Inicia ++++++++++++++++
+
+
+// Funciones anonimas  y CallBacks 
+// Una funcion anónima es una función que no tiene nombre
 function sumame(numero1, numero2, sumaYmuestra, sumaPorDos){
 	var sumar = numero1 + numero2;
 
@@ -222,16 +229,24 @@ function sumame(numero1, numero2, sumaYmuestra, sumaPorDos){
 
 	return sumar;
 }
+// Un CallBack es una Funcion anónima QUE SE PASA COMO PARÁMETRO a otra función. Aqui se pasan 2 funciones como parámetros
+sumame( 2 , 3 , function(dato){console.log("Suma :", dato);}  , function(dato){console.log("Suma x 2 =", (dato*2)); }  );
 
-sumame(5, 7, dato => {
-	console.log("La suma es:", dato);
-},
-function(dato){
-	console.log("La suma por dos es:", (dato*2));
-});
+// Es muy común que un CallBack se Utilice como FUNCION DE FLECHA, así que la llamada anterior se puede reescribir así:
+sumame( 4 , 5 , (dato) => {console.log("Suma :", dato);}  , (dato)=>{console.log("Suma x 2 =", (dato*2)); }  );
+
+// Incluso al llamar al CallBack se pueden omitir los paréntesis  así : 
+sumame( 6, 7 , dato=>{console.log("Suma :", dato);}  , dato=>{console.log("Suma x 2 =", (dato*2)); }  );
+
+
+    // +++++++++++++++++++ Importantísimo Finaliza ++++++++++++++++
 
 
 
+
+
+
+ 
 // AMBITO de las variables 
 function holaMundo(texto){
 	var hola_mundo = "Texto dentro de función";
@@ -252,10 +267,36 @@ holaMundo(texto);
 // Transformacion de textos
 var numero = 444;
 var texto1 = "   Bienvenido al curso de JavaScript curso de Victor Robles   ";
-var texto2 = "es muy buen curso";
+var texto2 = " " ; 
+   // En JS las variables son objetos y tienen métodos, ejemplo: valiable.ToString para convertir a Texto
+   console.log( numero, texto2 , typeof numero ); 
+   console.log( numero, texto2 , typeof numero.toString() ); 
+
+   alert( numero, texto2 , typeof numero ); 
+   alert( numero, texto2 , typeof numero.toString() ); 
+
+
 
 var busqueda = texto1.trim();
 console.log(busqueda);
+
+// Busquedas
+var precios = [10, 20, 50, 80, 12];
+
+//var busqueda = lenguajes.findIndex(lenguaje => lenguaje == "JS");
+var busqueda = precios.some(precio => precio < 10);
+
+console.log(busqueda);
+
+
+
+
+
+
+
+
+
+
 
 
 // Plantillas de texto
@@ -308,20 +349,15 @@ for(var i = 0; i < lenguajes.length; i++){
 // Y ESTA ES UNA TERCER FORMA , para recorrer un Arreglo ( Tercer Forma , es la mas usada )
 for(let lenguaje in lenguajes){
 	document.write("<li> Tercer For  "+lenguajes[lenguaje]+"</li>");
+
+	// Si utilizamos la Palabra reservada "debugger", el programa hace pausa para debugear
+	   // debugger 
+
+
 }
 document.write("</ul>");
 
 
-
-
-
-// Busquedas
-var precios = [10, 20, 50, 80, 12];
-
-//var busqueda = lenguajes.findIndex(lenguaje => lenguaje == "JS");
-var busqueda = precios.some(precio => precio < 10);
-
-console.log(busqueda);
 
 
 
