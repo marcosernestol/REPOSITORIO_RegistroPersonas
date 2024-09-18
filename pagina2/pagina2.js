@@ -267,26 +267,69 @@ holaMundo(texto);
 // Transformacion de textos
 var numero = 444;
 var texto1 = "   Bienvenido al curso de JavaScript curso de Victor Robles   ";
-var texto2 = " " ; 
+var texto2 = "  es muy buen curso" ; 
    // En JS las variables son objetos y tienen métodos, ejemplo: valiable.ToString para convertir a Texto
    console.log( numero, texto2 , typeof numero ); 
    console.log( numero, texto2 , typeof numero.toString() ); 
 
-   alert( numero, texto2 , typeof numero ); 
-   alert( numero, texto2 , typeof numero.toString() ); 
+   console.log( "" + numero + '  ' +  texto2  + '  ' +  typeof numero );  
+   console.log( '' + numero + '  ' +  texto2  + '  ' +  typeof numero.toString() ); 
+
+   console.log("<<<  -----1---  >>> ")
+   console.log( "Longitud   " + texto1.length ); // sirve para CONTAR incluyendo longitud de arreglos 
+   console.log( texto1.toUpperCase() ); 
+   console.log( texto1.toLowerCase() ); 
+   texto2 = texto2.concat("   -   ", texto2 , texto1 );
+   console.log( texto2);
+   texto1 = texto1.trim();
+   console.log(texto1);
+   console.log("<<<  -----2---  >>> ");
 
 
 
-var busqueda = texto1.trim();
-console.log(busqueda);
 
-// Busquedas
-var precios = [10, 20, 50, 80, 12];
+//Metodos de  Busquedas
+// puedo buscar una palabra dentro de una cadena de la siguiente forma
+var busqueda = texto1.indexOf("curso");
+console.log(busqueda); // Si es que encuentra la palabra "curso" me regresa la posición de donde empieza dicha palabra
+busqueda = texto1.lastIndexOf("de");
+console.log(busqueda); // me regresa la ultima aparición de la paladra "de"
+busqueda = texto1.search("curso"); // es lo mismo que usar indexOf
+console.log(busqueda); 
+busqueda = texto1.match("de"); // regresa un objeto ,indicando dónde está la coincidencia
+console.log(busqueda); 
+busqueda = texto1.match(/de/gi); // Está extraña esta forma de pasar el parámetro "de" 
+                                // lo pasa entre barras y posteriormente la palabra gi
+								// pero me regresa un array de las coincidencias de la palabra "de" en el texto1
+console.log(busqueda); 
+busqueda = texto1.substring(14,5); // extrae una subcadena comenzando enla posición 14 y 5 letras de largo
+console.log(busqueda); 
+busqueda = texto1.charAt(5); // regresa específicamente la letra que hay en la posicipon 5
+console.log(busqueda); 
+busqueda = texto1.startsWith("Víctor"); // regresa true o false si el texto comienza con esa palabra
+console.log(busqueda); 
+busqueda = texto1.endsWith("Víctor"); // regresa true o false si el texto termina con esa palabra
+console.log(busqueda); 
+busqueda = texto1.includes("JavaScripts"); // regresa true o false si el texto contiene esa palabra
+console.log(busqueda); 
 
+
+// Funciones de reemplazo
+busqueda = texto1.replace("JavaScripts","MapInfo"); // reemplaza la primer palabra por la segunda
+console.log(busqueda); 
+busqueda = texto1.slice(14); // divide el texto a partir de caracter 14
+console.log(busqueda); 
+
+busqueda = texto1.split(" "); // divide en un array , utilizando el separador de espacio ( aqui separaria por palabras)
+console.log(busqueda); 
+
+
+
+
+//var precios = [10, 20, 50, 80, 12];
 //var busqueda = lenguajes.findIndex(lenguaje => lenguaje == "JS");
-var busqueda = precios.some(precio => precio < 10);
-
-console.log(busqueda);
+//var busqueda = precios.some(precio => precio < 10);
+//console.log(busqueda);
 
 
 
@@ -324,11 +367,15 @@ var nombres = ["Victor Robles", "Juan Lopez", "Manolo Garcia", "Jose Martin", 52
 var lenguajes = new Array("PHP", "JS", "Go", "Java", "C#", "C", "Pascal");
 
 var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
+
 if(elemento >= nombres.length){
 	alert("Introduce el numero correcto menor que " + nombres.length);
 }else{
 	alert("El usuario seleccionado es: "+nombres[elemento]);
 }
+
+
+
 
 document.write("<h1>Lenguajes de programación del 2018</h1>");
 document.write("<ul>");
