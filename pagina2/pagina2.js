@@ -277,11 +277,11 @@ var texto2 = "  es muy buen curso" ;
 
    console.log("<<<  -----1---  >>> ")
    console.log( "Longitud   " + texto1.length ); // sirve para CONTAR incluyendo longitud de arreglos 
-   console.log( texto1.toUpperCase() ); 
-   console.log( texto1.toLowerCase() ); 
+   console.log( texto1.toUpperCase() ); // a matusculas
+   console.log( texto1.toLowerCase() ); // a minusculas
    texto2 = texto2.concat("   -   ", texto2 , texto1 );
    console.log( texto2);
-   texto1 = texto1.trim();
+   texto1 = texto1.trim(); // quita espacios en blanco al inicio y fin de la cadena
    console.log(texto1);
    console.log("<<<  -----2---  >>> ");
 
@@ -306,9 +306,9 @@ busqueda = texto1.substring(14,5); // extrae una subcadena comenzando enla posic
 console.log(busqueda); 
 busqueda = texto1.charAt(5); // regresa específicamente la letra que hay en la posicipon 5
 console.log(busqueda); 
-busqueda = texto1.startsWith("Víctor"); // regresa true o false si el texto comienza con esa palabra
+busqueda = texto1.startsWith("Victor"); // regresa true o false si el texto comienza con esa palabra
 console.log(busqueda); 
-busqueda = texto1.endsWith("Víctor"); // regresa true o false si el texto termina con esa palabra
+busqueda = texto1.endsWith("Victor"); // regresa true o false si el texto termina con esa palabra
 console.log(busqueda); 
 busqueda = texto1.includes("JavaScripts"); // regresa true o false si el texto contiene esa palabra
 console.log(busqueda); 
@@ -342,55 +342,62 @@ console.log(busqueda);
 
 
 
-// Plantillas de texto
+// Plantillas de texto ( Dice que es nuevo en JavaScript )
 
 var nombre = prompt("METE TU NOMBRE");
 var apellidos = prompt("METE TUS APELLIDOS");
 
-// var texto = " Mi nombre es: "+nombre+" <br/> Mis apellidos son: "+apellidos;
+// para Utilizar una plantilla  en lugar de comillas simples o dobles se utiliza la COMILLA INVERTIDA ``
+// y con el signo de pesosy las llaves se INTERPOLAN las variables dentro dle texto HTLM
 var texto = `
 	<h1>Hola que tal</h1>
 	<h3>Mi nombre es: ${nombre}</h3>
 	<h3>Mis apellidos son: ${apellidos}</h3>
+	<br/>
 `;
 
-// document.write(texto);  // OJO, imprime en el documento HTML y desaparece todo
-this.alert(texto); // No funcionó con el alert.
+document.write(texto);  // OJO, imprime en el documento HTML y desaparece todo
+alert(texto); // No funcionó con el alert.
 
 
 
 
-// Arrays, Arreglos, Matrices
-
-var nombre = "Victor Robles";
-var nombres = ["Victor Robles", "Juan Lopez", "Manolo Garcia", "Jose Martin", 52, true];
+// MANEJO DE:   Arrays, Arreglos o Matrices
+// Hay 2 formas de declarar un arreglo y son las siguientes:
+var nombres = ["Victor Robles", "Juan Lopez", "Manolo Garcia", "Jose Martin", 52, true]; // OJO: en JS un array acepta valores de sualquier tipo 
 var lenguajes = new Array("PHP", "JS", "Go", "Java", "C#", "C", "Pascal");
 
-var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
-
-if(elemento >= nombres.length){
-	alert("Introduce el numero correcto menor que " + nombres.length);
-}else{
-	alert("El usuario seleccionado es: "+nombres[elemento]);
-}
-
-
+    // Cómo acceder a un elemento en específico
+    var elemento = parseInt(prompt("Que elemento del array quieres??", 0));
+		if(elemento >= nombres.length){
+			alert("Introduce el numero correcto menor que " + nombres.length); // para saber la longitud de un array podemos usar .length Como ya se había comentado
+		}else{
+			alert("El usuario seleccionado es: "+nombres[elemento]);
+		}
 
 
-document.write("<h1>Lenguajes de programación del 2018</h1>");
-document.write("<ul>");
-
-
-
+// FORMAS DE RECORRER UN ARREGLO
 // ESTA ES UNA FORMA DE RECORRER UN ARCHIVO: (Primer forma)
 for(var i = 0; i < lenguajes.length; i++){
 	document.write("<li> Primer For  "+lenguajes[i]+"</li>");
 }
 
-// ESTA ES UNA SEGUNDA FORMA DE RECORRER UN ARCHIVO: (Segunda forma)
- lenguajes.forEach((elemento, indice)=>{
- 	document.write("<li> Segundo For"+indice+" - "+elemento+"</li>");
+// ESTA ES UNA SEGUNDA FORMA DE RECORRER UN ARCHIVO: (Segunda forma), UTILIZANDO forEach y una funcion de CallBack
+// Dicha funcion tiene 3 parámetros "elemento" , "incdice" y el "arreglo original que le pasamos"
+// OJO; los nombres de los parametros pueden ser cuaquiera y SOLO EL PRIMER PARAMETRO es obligatorio)
+// El indice y arreglo solo se utilizan si fuera necesario "MOSTRAR" alguno de esos elementos 
+lenguajes.forEach((elemento, indice, elArreglo )=>{
+	console.log(elArreglo);
+ 	document.write("<li> Segundo For  "+indice+" - "+elemento+"</li>");
  });
+
+// Como se comentó los 2 ultimos parámetros son opcionales ( si no se usan) , así que pudo haber quedado así:
+lenguajes.forEach((elemento )=>{
+ 	document.write("<li> Segundo For (forma corta) " + elemento+"</li>");
+ });
+
+
+
 
 
 // Y ESTA ES UNA TERCER FORMA , para recorrer un Arreglo ( Tercer Forma , es la mas usada )
@@ -406,12 +413,52 @@ document.write("</ul>");
 
 
 
+// ARREGLOS MULTIDIMENSIONALES
+var categorias = ['Acción', 'Terror', 'Comedia'];
+var peliculas = ['La verdad duele', 'La vida es bella', 'Gran torino'];
+
+// peliculas.reverse();
+console.log(peliculas);
+
+var cine = [categorias, peliculas]; // Este es un arreglo de 2 arreglos ( o sea multidimensional)
+
+ console.log(cine[0][1]);
+ console.log(cine[1][2]);
 
 
 
+// OPERACIONES CON ARRAYS
+peliculas.push("Batman")  ; // Agrega un elemento al array
+
+var elemento = "";
+do{
+	elemento = prompt("Introduce tu pelicula (hasta que pongas la palabra FIN ):");
+	peliculas.push(elemento);
+}while(elemento != "FIN" );
+
+console.log(peliculas); // Ordena el arreglo de forma Inversa
 
 
+// Para eliminar la última película se puede utilizar el método pop(), así:
+peliculas.pop(); // Y esto elimina el último elemento del array
 
+
+// Pero si quisiera eliminar algun elemento específico del array, primero tendria que buscar el índice con .indexOf
+var indice = peliculas.indexOf('Gran torino'); // Con esto busco el ïndice de la pelicula "Gran torino"
+if(indice > -1){
+	peliculas.splice(indice, 1); // Y con esto lo ELIMINO (a partir de ese índice) 
+								 // tantos elementos como indique el 2do parametro ( en este caso solo 1 elemento)  
+}
+
+
+// Y ESTO ES SUPER UTILIZADO, para CONVERTIR UN ARRAY A TEXTO. ( pero se tienen que asignar a una variable )
+var peliculas_string = peliculas.join();
+console.log(peliculas_string ); // Esto me regresa una cadena de texto separada por comas ( hecha con cada elemento del array)
+
+// Y esto CONVIERTE UN STRING SEPARADO POR COMAS  en un ARREGLO
+var cadena = "texto1, texto2, texto3";
+var cadena_array = cadena.split(", ");
+console.log(cadena_array);
 
 
 
