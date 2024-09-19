@@ -326,22 +326,6 @@ console.log(busqueda);
 
 
 
-//var precios = [10, 20, 50, 80, 12];
-//var busqueda = lenguajes.findIndex(lenguaje => lenguaje == "JS");
-//var busqueda = precios.some(precio => precio < 10);
-//console.log(busqueda);
-
-
-
-
-
-
-
-
-
-
-
-
 // Plantillas de texto ( Dice que es nuevo en JavaScript )
 
 var nombre = prompt("METE TU NOMBRE");
@@ -400,9 +384,9 @@ lenguajes.forEach((elemento )=>{
 
 
 
-// Y ESTA ES UNA TERCER FORMA , para recorrer un Arreglo ( Tercer Forma , es la mas usada )
+// Y ESTA ES UNA TERCER FORMA , para recorrer un Arreglo llamada FOR-IN ( Tercer Forma , es la mas usada )
 for(let lenguaje in lenguajes){
-	document.write("<li> Tercer For  "+lenguajes[lenguaje]+"</li>");
+	document.write("<li> Tercer For  "+lenguajes[lenguaje]+"</li>"); // en este caso "lenguaje" es un INDICE y se va incrementando 1 a 1
 
 	// Si utilizamos la Palabra reservada "debugger", el programa hace pausa para debugear
 	   // debugger 
@@ -417,7 +401,8 @@ document.write("</ul>");
 var categorias = ['Acción', 'Terror', 'Comedia'];
 var peliculas = ['La verdad duele', 'La vida es bella', 'Gran torino'];
 
-// peliculas.reverse();
+
+console.log("<<<  -----3---  >>> ");
 console.log(peliculas);
 
 var cine = [categorias, peliculas]; // Este es un arreglo de 2 arreglos ( o sea multidimensional)
@@ -426,6 +411,10 @@ var cine = [categorias, peliculas]; // Este es un arreglo de 2 arreglos ( o sea 
  console.log(cine[1][2]);
 
 
+// ORDENANDO ELEMENTOS DENTRO DE LOS ARREGLOS
+console.log(peliculas.reverse()); // Ordena el arreglo de forma Inversa
+console.log(peliculas.sort()); // Ordena el arreglo de forma Alfabetica
+debugger;
 
 // OPERACIONES CON ARRAYS
 peliculas.push("Batman")  ; // Agrega un elemento al array
@@ -463,6 +452,29 @@ console.log(cadena_array);
 
 
 
+// BUSCAR DENTRO DE UN ARRAY
+console.log("<<<  ----- 4 ---  >>> ");
+console.log(lenguajes);  // Este es el arreglo que vamos a estar analizando
+var busqueda = lenguajes.find(function(lenguaje){ return lenguaje == "JS"});  // La idea de este código es que			
+console.log(busqueda);  // Si Dentro del arreglo de lenguajes , se encuentra el elemento "JS" ; ENTONCES lo imprime
+  
+    // esta misma funcion anterior se puede REDUCIR en su definición si se utiliza una Notación de FLECHA , así:
+	// quitamos la palabra function y ponemos flecha, quitamos paréntesis,  y listo
+var busqueda = lenguajes.find( lenguaje=>{  return lenguaje == "JS"});  // La idea de este código es que			
+	console.log(busqueda);  // Si Dentro del arreglo de lenguajes , se encuentra el elemento "JS" ; ENTONCES lo imprime
+	  
+// con findIndex Se puede buscar el INDICE , o sea la posición del elemento dentro del array donde se encuentra el elemento a buscar 
+var busqueda = lenguajes.findIndex(lenguaje => lenguaje == "JS"); 
+console.log(busqueda);  // Si Dentro del arreglo de lenguajes , se encuentra el elemento "JS" ; ENTONCES lo imprime
+	
+
+// Otro metodo interesante es "some";  Si tuvieramos un Array numérico, se podría utilizar una "expresión" 
+// y determinar si alguno de los elementos cumple la condición ( y regresaría TRUE o FALSE )
+// Por ejemplo: el siguiente código busca si en la lista de precios hay uno  Menor a 10 
+// De cumplirse la condición retorna TRUE de lo contrario retornaría FALSE.
+var precios = [10, 20, 50, 80, 12];
+var busqueda = precios.some(precio => precio < 10);
+console.log(busqueda);
 
 
 
