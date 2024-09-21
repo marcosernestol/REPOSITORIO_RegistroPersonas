@@ -5,13 +5,30 @@ window.addEventListener('load',function(){
 //  INTERESANTE:  También funciona si la declaramos asi:
 //  window.addEventListener('load',()=>{
 
+
+  var caja = document.getElementById("mi_caja"); // Para seleccional el elemento HTML por su ID
+   console.log(caja);
+
+   caja.style.background = "red";
+   caja.style.padding = "20px";
+   caja.style.color = "white";
+
+
+
+  var cajaContenido = document.getElementById("mi_caja").innerHTML;  // o el contenido 
+   console.log(cajaContenido);
+
+   cajaContenido = cajaContenido + "<br> <h1> JA !! </h1>" ; 
+   caja.innerHTML = cajaContenido ;
+
+
+
   // Lo más básico
       alert('Hola Marcos');         // ALERTTA
       console.log( 'Hola Mundo');   // Imprime en consola
 
      var mi_resultado = confirm("¿Estas seguro de querer continuar?"); // CONFIRMACIÓN
-         console.log(mi_resultado);
-
+         console.log(mi_resultado); 
      var mi_resultado = prompt("¿Que edad tienes?", 18);  // INGRESO DATOS
          console.log(typeof mi_resultado);
 
@@ -173,11 +190,12 @@ function porConsola(numero1, numero2){
 }
 
 function porPantalla(numero1, numero2){
-	document.write("Suma: " + (numero1+numero2)+"<br/>");
-	document.write("Resta: " + (numero1-numero2)+"<br/>");
-	document.write("Multiplicacion: " + (numero1*numero2)+"<br/>");
-	document.write("División: " + (numero1/numero2)+"<br/>");
-	document.write("***********************************"+"<br/>");
+	// SI FUNCIONA EL document.write  - Solo que escribe en todo el DOM ( segun yo )
+	 document.write("Suma: " + (numero1+numero2)+"<br/>");
+	 document.write("Resta: " + (numero1-numero2)+"<br/>");
+	 document.write("Multiplicacion: " + (numero1*numero2)+"<br/>");
+	 document.write("División: " + (numero1/numero2)+"<br/>");
+	 document.write("***********************************"+"<br/>");
 }
 
 function calculadora(numero1, numero2, mostrar = false){
@@ -340,7 +358,13 @@ var texto = `
 	<br/>
 `;
 
-document.write(texto);  // OJO, imprime en el documento HTML y desaparece todo
+
+var caja = document.getElementById("mi_caja"); // Para seleccional el elemento HTML por su ID
+var cajaContenido = document.getElementById("mi_caja").innerHTML;  // o el contenido 
+cajaContenido = cajaContenido + texto ; 
+caja.innerHTML = cajaContenido ;
+
+// document.write(texto);  // OJO, imprime en el documento HTML y desaparece todo
 alert(texto); // No funcionó con el alert.
 
 
@@ -360,40 +384,70 @@ var lenguajes = new Array("PHP", "JS", "Go", "Java", "C#", "C", "Pascal");
 		}
 
 
+var caja = document.getElementById("mi_caja"); 
 // FORMAS DE RECORRER UN ARREGLO
 // ESTA ES UNA FORMA DE RECORRER UN ARCHIVO: (Primer forma)
+caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "<ul>" ;
 for(var i = 0; i < lenguajes.length; i++){
-	document.write("<li> Primer For  "+lenguajes[i]+"</li>");
+
+  // document.write("<li> Primer For  "+lenguajes[i]+"</li>");  // Si funciona, pero escribe en el DOM
+  // Trataré de reemplazar el   document.write con esta otra instruccion para que imprima en la caja en lugar del DOM
+  caja.innerHTML = document.getElementById("mi_caja").innerHTML + "<li> Primer For  "+lenguajes[i]+"</li>" ;  // SI funcionó
 }
+ // document.write("</ul>");
+
+
+
+
 
 // ESTA ES UNA SEGUNDA FORMA DE RECORRER UN ARCHIVO: (Segunda forma), UTILIZANDO forEach y una funcion de CallBack
 // Dicha funcion tiene 3 parámetros "elemento" , "incdice" y el "arreglo original que le pasamos"
 // OJO; los nombres de los parametros pueden ser cuaquiera y SOLO EL PRIMER PARAMETRO es obligatorio)
 // El indice y arreglo solo se utilizan si fuera necesario "MOSTRAR" alguno de esos elementos 
+var caja = document.getElementById("mi_caja"); 
+caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "<ul>" ;
 lenguajes.forEach((elemento, indice, elArreglo )=>{
 	console.log(elArreglo);
- 	document.write("<li> Segundo For  "+indice+" - "+elemento+"</li>");
+
+	 // document.write("<li> Segundo For  "+indice+" - "+elemento+"</li>"); // Si funciona pero escribe en el DOM
+     // Trataré de escribir en la caja, en lugar del DOM
+	  caja.innerHTML = document.getElementById("mi_caja").innerHTML + "<li> Segundo For "+indice+" - "+elemento+"</li>" ;  // SI funcionó
  });
+ caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "</ul><br>" ;
+
+
 
 // Como se comentó los 2 ultimos parámetros son opcionales ( si no se usan) , así que pudo haber quedado así:
+caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "<ul>" ;
 lenguajes.forEach((elemento )=>{
- 	document.write("<li> Segundo For (forma corta) " + elemento+"</li>");
+ 	// document.write("<li> Segundo For (forma corta) " + elemento+"</li>");  // SI funciona pero escribe en el DOM
+	// Trataré de escribir en la caja, en lugar del DOM
+	  caja.innerHTML = document.getElementById("mi_caja").innerHTML + "<li> Segundo For (forma corta) " + elemento+"</li>" ;  // SI funcionó
  });
+ caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "</ul><br>" ;
+
+
 
 
 
 
 
 // Y ESTA ES UNA TERCER FORMA , para recorrer un Arreglo llamada FOR-IN ( Tercer Forma , es la mas usada )
+caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "<ul>" ;
 for(let lenguaje in lenguajes){
-	document.write("<li> Tercer For  "+lenguajes[lenguaje]+"</li>"); // en este caso "lenguaje" es un INDICE y se va incrementando 1 a 1
-
+	// document.write("<li> Tercer For  "+lenguajes[lenguaje]+"</li>"); // en este caso "lenguaje" es un INDICE y se va incrementando 1 a 1
+	caja.innerHTML = document.getElementById("mi_caja").innerHTML + "<li> Tercer For  "+lenguajes[lenguaje]+"</li>" ;  // SI funcionó
+ 
 	// Si utilizamos la Palabra reservada "debugger", el programa hace pausa para debugear
 	   // debugger 
-
-
 }
-document.write("</ul>");
+
+caja.innerHTML = document.getElementById("mi_caja").innerHTML +  "</ul><br>" ;
+console.log(caja.innerHTML);
+
+
+
+
 
 
 
@@ -479,4 +533,4 @@ console.log(busqueda);
 
 
 
-});
+ });  // Se cierra el evento 'load'
