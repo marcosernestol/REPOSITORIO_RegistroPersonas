@@ -12,8 +12,7 @@ window.addEventListener('load',function(){
    caja.style.background = "red";
    caja.style.padding = "20px";
    caja.style.color = "white";
-
-
+   caja.style.overflow = "scroll"; // Para poner el Scroll
 
   var cajaContenido = document.getElementById("mi_caja").innerHTML;  // o el contenido 
    console.log(cajaContenido);

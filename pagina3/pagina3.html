@@ -4,7 +4,7 @@
 
 <head>
     <!-- aqui van todos METADATOS , que usa el navegador  -->
-    <title>Mapa</title>
+    <title>Registro Personas</title>
     <!-- es el titulo para la página -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +13,10 @@
     <meta name="author" content="Marcos Lozano" />
     <meta name="keywords" content="poner palabras clave para los navegadores, serapadas por coma">
 
-    <link rel="stylesheet" href="../index_estilos.css">
-    <link rel="stylesheet" href="./lib/OpenLayers/ol.css">
-    <link rel="stylesheet" href="./mapa_estilos.css">
+    <link rel="stylesheet" href="./pagina3.css">
 
+    <script type="text/javascript" src="pagina3.js"></script>
+		
 </head>
 
 
@@ -32,30 +32,18 @@
     <nav class="menuInicial">
         <ul>
             <li><a href="../index.html">Inicial</a></li>
-            <li><a href="../pagina2/pagina2.html">Pagina2</a></li>
-            <li><a href="../pagina3/pagina3.html">Pagina3</a></li>
-            <li><a href="./mapa.html">Mi Mapa</a></li>
-        
+            <li><a href="./pagina2/pagina2.html">Pagina2</a></li>
+            <li><a href="pagina3.html">Pagina3</a></li>
+            <li><a href="../OpenLayers_WebMap/mapa.html">Mi Mapa</a></li>
         </ul>
     </nav>
 
 
-    <!-- El curso dice que aqui en el BODY pongamos los scripts ;  NO SE POR QUE!!. ¿no debería ser en el ancabezado ? -->
-    <script src='./lib/OpenLayers/ol.js'></script>
-    <script src='./mapa.js'></script>
-
-
     <section>
-
-        <div id='mi_mapa' class='map'></div>
-
     </section>
 
 
     <footer>
-        <input type="button" value="Guardar" href="" id="botonGuardar">
-        <input type="button" value="Cancelar" href="" id="botonCancelar">
-
     </footer>
 
 </body>
