@@ -1,3 +1,16 @@
+
+'use strict' // Para que se use la notación estrícta
+
+/*
+// Quise Utilizar el evento "load" pero NO funciona el mapa, no lo muestra :(
+window.addEventListener('load',function(){
+    //  INTERESANTE:  También funciona si la declaramos asi:
+    //  window.addEventListener('load',()=>{
+    
+
+});  // Se cierra el evento 'load'
+*/
+
 //import { useGeographic } from './lib/OpenLayers/ol/proj'; //  'ol/proj';
 //useGeographic();  // Se supone que con esta función se activan las funciones geográficas , o algo así :) :)
 
@@ -19,3 +32,6 @@ function init() {
         target: "mi_mapa"
     })
 }
+
+
+
