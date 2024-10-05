@@ -48,6 +48,14 @@
      top: 45px;
      background: #C4C4C4;
  }
+
+  
+ .error {
+    color: #fc0707;
+}
+ 
+
+  /* -----------------------  el # "Gatito" hace referencia al Identificador ( id )  -------------------   */
  
  #lblRegistroDePersonas {
      position: absolute;

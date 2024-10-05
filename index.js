@@ -34,29 +34,43 @@ var probandoTabla = document.querySelector("#frameListadoDePersonasRegistradas")
         // Con el siguiente if es fácil de validar y No nos deja pasar hasta que el dato dea válido
         if(varNombreUnico.trim() == null || varNombreUnico.trim().length == 0){
 			alert("El NombreUnico no es válido");
+                document.querySelector("#errorNombreUnico").innerHTML = "*"
 			return false;
-		}
+		}else{
+            document.querySelector("#errorNombreUnico").style.display = "none" ;
+        }
 
             // y así con los demás campos
         if(varNombreCompleto.trim() == null || varNombreCompleto.trim().length == 0){
             alert("El NombreCompleto no es válido");
-            return false;
+            document.querySelector("#errorNombreCompleto").innerHTML = "*"
+			return false;
+		}else{
+            document.querySelector("#errorNombreCompleto").style.display = "none" ;
         }
 
 		if(varEdad == null || varEdad <= 0 || isNaN(varEdad)){
 			alert("La Edad no es válida");
+            document.querySelector("#errorEdad").innerHTML = "*"
 			return false;
-		}
-
+		}else{
+            document.querySelector("#errorEdad").style.display = "none" ;
+        }
 
         if(varCorreoElectronico.trim() == null || varCorreoElectronico.trim().length == 0){
             alert("El CorreoElectrónico no es válido");
-            return false;
+            document.querySelector("#errorCorreoElectronico").innerHTML = "*"
+			return false;
+		}else{
+            document.querySelector("#errorCorreoElectronico").style.display = "none" ;
         }
 
         if(varPassword.trim() == null || varPassword.trim().length == 0){
             alert("El Password no es válido");
-            return false;
+            document.querySelector("#errorPassword").innerHTML = "*"
+			return false;
+		}else{
+            document.querySelector("#errorPassword").style.display = "none" ;
         }
 
 
