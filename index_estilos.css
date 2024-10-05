@@ -61,13 +61,24 @@
      font-size: 24px;
      line-height: 28px;
      color: #000000;
+     
  }
- 
+
+ #divFoto{
+    position: absolute;
+    width: 240px;
+    height: 500px;
+    left: 42px;
+    top: 25px;
+   background: url(.jpg), #c4c4c4;  
+}
+
+
  #imgFoto {
-     position: absolute;
+     position: relative;
      width: 206px;
      height: 250px;
-     left: 42px;
+     left: 20px;
      top: 25px;
      background: url(.jpg), #C4C4C4;
  }
@@ -77,45 +88,52 @@
      width: 236px;
      height: 32px;
      left: 548px;
-     top: 3px;
+     top: 6px;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;
      font-size: 24px;
      line-height: 28px;
      color: #000000;
+
  }
  
- #lblNombreUnicoDeUsuario {
-     position: absolute;
-     width: 160px;
-     height: 16px;
-     left: 288px;
-     top: 96px;
-     font-family: Roboto;
-     font-style: normal;
-     font-weight: normal;
-     font-size: 14px;
-     line-height: 16px;
-     color: #000000;
+
+
+ #lblNombreUnico {
+    position: absolute;
+    width: 160px;
+    height: 16px;
+    left: 288px;
+    top: 86px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+  
  }
  
- #inputNombreUnicoDeUsuario {
+ #inputNombreUnico {
      position: absolute;
      width: 277px;
      height: 28px;
      left: 460px;
-     top: 88px;
+     top: 78px;
      border: 1px solid #000000;
      box-sizing: border-box;
+
  }
  
+
+
  #lblNombreCompleto {
      position: absolute;
      width: 157px;
      height: 17px;
      left: 288px;
-     top: 138px;
+     top: 128px;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;
@@ -130,17 +148,53 @@
      width: 277px;
      height: 28px;
      left: 460px;
-     top: 131px;
+     top: 121px;
      border: 1px solid #000000;
      box-sizing: border-box;
+
  }
  
+
+
+
+ #lblEdad {
+    position: absolute;
+    width: 157px;
+    height: 28px;
+    left: 288px;
+    top: 168px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+    color: #000000;
+    /* background: #f10505; */
+}
+
+#inputEdad {
+    position: absolute;
+    width: 275px;
+    height: 24px;
+    left: 460px;
+    top: 164px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    /* background: #f10505; */
+}
+
+
  #lblCorreoelectronico {
      position: absolute;
      width: 115px;
      height: 16px;
      left: 288px;
-     top: 184px;
+     top: 214px;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;
@@ -154,7 +208,7 @@
      width: 277px;
      height: 28px;
      left: 460px;
-     top: 174px;
+     top: 204px;
      border: 1px solid #000000;
      box-sizing: border-box;
  }
@@ -164,7 +218,7 @@
      width: 61px;
      height: 16px;
      left: 288px;
-     top: 226px;
+     top: 246px;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;
@@ -178,7 +232,7 @@
      width: 277px;
      height: 28px;
      left: 460px;
-     top: 225px;
+     top: 245px;
      border: 1px solid #000000;
      box-sizing: border-box;
  }
@@ -188,7 +242,7 @@
      width: 44px;
      height: 16px;
      left: 288px;
-     top: 279px;
+     top: 289px;
      font-family: Roboto;
      font-style: normal;
      font-weight: normal;

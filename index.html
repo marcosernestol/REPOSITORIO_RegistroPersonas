@@ -30,6 +30,8 @@
     <meta name="keywords" content="poner palabras clave para los navegadores, serapadas por coma">
 
     <link rel="stylesheet" href="index_estilos.css">
+    <script type="text/javascript" src="index.js"></script>
+	
 </head>
 
 
@@ -57,48 +59,89 @@
     <section>
         <h3 id="lblRegistroDePersonas">Registro de personas</h3>
 
-        <img src="imagenes/foto.png" alt="" id="imgFoto">
+        <div id="divFoto">
+            <img src="imagenes/foto.png" alt="" id="imgFoto">
+        
+            <hr>
+            <hr>
+
+            <p id= "pNombreUnico">
+                Nombre Unico: <span>x</span>
+            </p>
+
+            <p id= "pNombreCompleto">
+                Nombre Completo: <span>x</span>
+            </p>
+
+            <p id= "pEdad">
+                Edad: <span>x</span>
+            </p>
+
+            <p id= "pCorreoElectronico">
+                e-mail: <span>x</span>
+            </p>
+
+            <p id= "pPassword">
+                Password: <span>x</span>
+            </p>
+        
+        
+        </div>
+
+        <form action="" method="POST" id="primerFormulario" onsubmit = "return false;">  
+            <!-- EL método POST muestra datos en URL , el onsubmit = "return false;" 
+                 lo puse para que NO redireccione a otra página al presionar el boton guardae -->
 
 
-        <label for="Nombre Unico de Usuario" id="lblNombreUnicoDeUsuario">Nombre Unico de Usuario</label>
-        <input type="text" name="" id="inputNombreUnicoDeUsuario">
+            <!-- IMPORTANTE EL BOTON DE ENVIAR EL type DEBE SER submit  -->
+            <input type="submit" value="Guardar" href="" id="botonGuardar">
+            <input type="button" value="Cancelar" href="" id="botonCancelar">
 
-        <label for="Nombre Completo" id="lblNombreCompleto">Nombre Completo</label>
-        <input type="text" name="" id="inputNombreCompleto">
 
-        <label for="Correo electrónico" id="lblCorreoelectronico">Correo Electrónico</label>
-        <input type="email" name="" id="inputCorreoElectronico">
+            <label for="Nombre Unico de Usuario" id="lblNombreUnico">Nombre Unico de Usuario</label>
+            <input type="text" name="NombreUnico" id="inputNombreUnico">
 
-        <label for="password" id="lblPassword">password</label>
-        <input type="password" name="" id="inputPassword">
+            <label for="Nombre Completo" id="lblNombreCompleto">Nombre Completo</label>
+            <input type="text" name="NombreCompleto" id="inputNombreCompleto">
 
-        <label for="genero" id="lblGenero">genero</label>
-        <!-- <input type="checkbox" name="" id="switchGenero"> -->
-        <img id="switchGenero" src="imagenes/switchGenero.png" alt="Aquí va un switch de Género">
+            <label for="Edad" id="lblEdad">Edad</label>
+            <input type="text" name="Edad" id="inputEdad">
 
-        <label for="Estado Civil" id="lblEstadoCivil">Estado Civil</label>
-        <!-- <input type="text" name="" id="radioGroupEstadoCivil"> -->
-        <img id="radioGroupEstadoCivil" src="imagenes/radioGroupEstadoCivil.png" alt="Aquí va radiogrup de Estado Civil">
+            <label for="Correo electrónico" id="lblCorreoelectronico">Correo Electrónico</label>
+            <input type="email" name="CorreoElectronico" id="inputCorreoElectronico">
 
-        <label for="Fecha de Nacimiento" id="lblFechaDeNacimiento">Fecha de Nacimiento</label>
-        <input type="date" name="" id="calendarFechaDeNacimiento">
-
-        <label for="Hora de Registro" id="lblHoraDeRegistro">Hora de Registro</label>
-        <input type="time" name="" id="timeHoraDeRegistro">
+            <label for="password" id="lblPassword" su>password</label>
+            <input type="password" name="Password" id="inputPassword" autocomplete = "PonerPassword" >
 
 
 
 
-        <label for="Estado donde nació" id="lblEstadoDondeNacio">Estado donde Nació</label>
-        <select name="" id="comboEstadoDondeNacio"> 
-            <option value="">Aguascalientes</option>
-            <option value="">Baja California</option>
-            <option value="">Coahuila</option>
-            <option value="">Durango</option>
-        </select>
+            <label for="genero" id="lblGenero">genero</label>
+            <!-- <input type="checkbox" name="" id="switchGenero"> -->
+            <img id="switchGenero" src="imagenes/switchGenero.png" alt="Aquí va un switch de Género">
 
-        <label for="Domicilio" id="lblDomicilio">Domicilio</label>
-        <textarea name="" id="txtareaDomicilio" cols="30" rows="10"></textarea>
+            <label for="Estado Civil" id="lblEstadoCivil">Estado Civil</label>
+            <!-- <input type="text" name="" id="radioGroupEstadoCivil"> -->
+            <img id="radioGroupEstadoCivil" src="imagenes/radioGroupEstadoCivil.png" alt="Aquí va radiogrup de Estado Civil">
+
+            <label for="Fecha de Nacimiento" id="lblFechaDeNacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="" id="calendarFechaDeNacimiento">
+
+            <label for="Hora de Registro" id="lblHoraDeRegistro">Hora de Registro</label>
+            <input type="time" name="" id="timeHoraDeRegistro">
+
+            <label for="Estado donde nació" id="lblEstadoDondeNacio">Estado donde Nació</label>
+            <select name="" id="comboEstadoDondeNacio"> 
+               <option value="">Aguascalientes</option>
+              <option value="">Baja California</option>
+              <option value="">Coahuila</option>
+              <option value="">Durango</option>
+            </select>
+
+            <label for="Domicilio" id="lblDomicilio">Domicilio</label>
+            <textarea name="" id="txtareaDomicilio" cols="30" rows="10"></textarea>
+
+        </form>
 
         <div id="divMapa">
             <img src="imagenes/mapa.png" alt="Mapa">
@@ -137,44 +180,13 @@
                 <td>Dato A12</td>
                 <td>Dato A13</td>
             </tr>
-            <tr>
-                <td>Dato B1</td>
-                <td>Dato B2</td>
-                <td>Dato B3</td>
-                <td>Dato B4</td>
-                <td>Dato B5</td>
-                <td>Dato B6</td>
-                <td>Dato B7</td>
-                <td>Dato B8</td>
-                <td>Dato B9</td>
-                <td>Dato B10</td>
-                <td>Dato B11</td>
-                <td>Dato B12</td>
-                <td>Dato B13</td>
-            </tr>
-            <tr>
-                <td>Dato C1</td>
-                <td>Dato C2</td>
-                <td>Dato C3</td>
-                <td>Dato C4</td>
-                <td>Dato C5</td>
-                <td>Dato C6</td>
-                <td>Dato C7</td>
-                <td>Dato C8</td>
-                <td>Dato C9</td>
-                <td>Dato C10</td>
-                <td>Dato C11</td>
-                <td>Dato C12</td>
-                <td>Dato C13</td>
-            </tr>
+           
         </table>
 
     </section>
 
 
     <footer>
-        <input type="button" value="Guardar" href="" id="botonGuardar">
-        <input type="button" value="Cancelar" href="" id="botonCancelar">
 
     </footer>
 

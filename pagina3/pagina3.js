@@ -121,6 +121,7 @@ var boton = document.querySelector("#frameLogo");  // Para el ejercicio voy a us
 
 
 // Click , este es un ejemplo de como Agregar un "listener" para el Evento "click" 
+// Dicen en el curso que un evento en una funcion de CalBack
 boton.addEventListener('click', function(){
 	cambiarColor();
 	console.log(this);
@@ -134,38 +135,89 @@ boton.addEventListener('mouseover', function(){
 });
 
 // Mouseout  , Cuando el mouse salga del objeto Boton, cambiará su color a gris
-boton.addEventListener('mouseout', function(){
-	boton.style.background =  "#ccc";  // También se puede usar el código rgb del color ( este es Gris)
-});
+// Dicen en el curso que un evento en una funcion de CalBack , 
+// así que probaré definirla como una función de FLECHA en lugar de usar "function()"
+//  Y sí funcionó
+// boton.addEventListener('mouseout', function(){
+    boton.addEventListener('mouseout', ()=>{
+	  boton.style.background =  "#ccc";  // También se puede usar el código rgb del color ( este es Gris)
+    });
 
 
 
-// Focus
+// Ahora vamos a ver otros eventos dentro de la caja de Input, llamada  "campo_nombre"
+// Focus , cuando el campo_nombre  OBTIENE el foco
 var input = document.querySelector("#campo_nombre");
 
 input.addEventListener('focus', function(){
 	console.log("[focus] Estas dentro del input");
 });
 
-// Blur
+// Blur , cuando el campo_nombre  DEJA el foco
 input.addEventListener('blur', function(){
 	console.log("[blur] Estas fuera del input");
 });
 
-// Keydown
+// Keydown  , cuando se pulsa una tecla
 input.addEventListener('keydown', function(event){
 	console.log("[keydown] Pulsando esta tecla ", String.fromCharCode(event.keyCode));
 
 });
 
-// Keypress
+// Keypress  ,  cuando se mantiene Presionada una tecla
 input.addEventListener('keypress', function(event){
 	console.log("[keypress] Tecla presionada ", String.fromCharCode(event.keyCode));
 });
 
-// Keyup
+// Keyup  , cuendo se Suelta una tecla.
 input.addEventListener('keyup', function(event){
 	console.log("[keyup] Tecla soltada ", String.fromCharCode(event.keyCode));
+});
+
+
+
+// Ahora vamos a revisar los TIMERS  
+// Existen 2 funciones de CallBack para los Timers, que son;   setInterval  y  setTimeout
+// Y adicionalmente clearInterval DETIENE o LIMPIA un setInterval
+
+// El setInterval se va a estar repitiendo a intervalos regulares de x tiempo
+// recibe 2 parametros: Un afunción de CallBack y un parámetro de Tiempo en milisegundos
+function intervalo(){
+	var tiempo = setInterval(function(){
+
+		console.log("Set interval ejecutado");
+		
+		var encabezado = document.querySelector("#micaja");
+		if(encabezado.style.fontSize == "50px"){
+			encabezado.style.fontSize = "30px";
+		}else{
+			encabezado.style.fontSize = "50px";
+		}
+
+	}, 1000);  // Cada Segundo va a estar cambiando el texto de tamaño
+
+	return tiempo;
+}
+
+var tiempo = intervalo();
+
+
+
+// ahora se va a crear un botón llamado "stop" que detiene el intervalo
+var stop = document.querySelector("#stop");
+
+stop.addEventListener("click", function(){
+	alert("Has parado el intervalo en bucle");
+	clearInterval(tiempo);
+});
+
+
+// Y vamos a crear otro boton para iniciar el ciclo nuevamente
+var start = document.querySelector("#start");
+
+start.addEventListener("click", function(){
+	alert("Has iniciado el intervalo en bucle");
+	intervalo();
 });
 
 
