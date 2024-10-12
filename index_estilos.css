@@ -30,7 +30,7 @@
      background: #4E879F;
      border-radius: 30px;
  }
- /* -----------------------  el punto hace referencia a clases .class  -------------------   */
+ /* --------  el punto hace referencia a clases .class  -------------------   */
  
  .perfilUsuario {
      position: absolute;
@@ -55,7 +55,7 @@
 }
  
 
-  /* -----------------------  el # "Gatito" hace referencia al Identificador ( id )  -------------------   */
+  /* ------  el # "Gatito" hace referencia al Identificador ( id )  -------------------   */
  
  #lblRegistroDePersonas {
      position: absolute;

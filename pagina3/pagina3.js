@@ -88,14 +88,10 @@ function abrirVentanaEmergente(url){
 	window.open(url,"","width=400,height=300");
 };
 
-getBom();
-abrirVentana("https://www.google.com.mx/maps/");   // Abre una ventana (pestaña) del navegador 
-abrirVentanaEmergente("https://www.google.com.mx/maps/"); // Abre una ventana emergente de Google Maps ( pero tuve que desbloquear el permiso de Ventanas Hemergentes del navehador )
-
+getBom(); // Aquí se lanza la funcion getBom() , para chacer algunas caracteristicas del BOM, como el ancho y alto de pantalla
 
 
 // Ahora vamos a revisar el tema de los EVENTOS 
-
 
 // Esta es una funcion que cambia el estilo de la variable ( o sea del Objeto ) "boton"
 // y va intercambiando de color rojo a verde con cada click que se de encima de el.
@@ -125,7 +121,11 @@ var boton = document.querySelector("#frameLogo");  // Para el ejercicio voy a us
 boton.addEventListener('click', function(){
 	cambiarColor();
 	console.log(this);
-	this.style.border = "10px solid black";
+	
+	abrirVentana("https://www.google.com.mx/maps/");   // Abre una ventana (pestaña) del navegador 
+	abrirVentanaEmergente("https://www.google.com.mx/maps/"); // Abre una ventana emergente de Google Maps ( pero tuve que desbloquear el permiso de Ventanas Hemergentes del navehador )
+   
+   
 });
 
 
@@ -205,19 +205,64 @@ var tiempo = intervalo();
 
 // ahora se va a crear un botón llamado "stop" que detiene el intervalo
 var stop = document.querySelector("#stop");
-
-stop.addEventListener("click", function(){
-	alert("Has parado el intervalo en bucle");
-	clearInterval(tiempo);
-});
-
-
 // Y vamos a crear otro boton para iniciar el ciclo nuevamente
 var start = document.querySelector("#start");
 
+
+stop.addEventListener("click", function(){
+
+	// Limpia o Detiene el intervalo
+	clearInterval(tiempo);
+
+	// en los Eventos, existe la opción "this" que hace referencia 
+	// Al propio objeto donde se le asignó el objeto objeto sobre
+	// Por ejemplo en este botón se puede  usar:
+	// this.fieldset.disabled=true;
+	this.style.background = "green";
+	this.style.border = "10px solid black";
+	// Obviamente también se puede hacer referencia a la variable "stop",
+	// Y hace exáctamente lo mismo
+	   //stop.style.background = "red";
+	   //stop.style.border = "10px solid black";
+
+	start.style.background = "grey";
+	start.style.border = "1px solid black";
+
+	
+	stop.ariaDisabled = true;  
+	start.ariaDisabled = false; 
+
+	// alert("Has parado el intervalo en bucle");
+
+});
+
+
+
 start.addEventListener("click", function(){
-	alert("Has iniciado el intervalo en bucle");
+
+	// Reinicia el intervalo
 	intervalo();
+
+	// en los Eventos, existe la opción "this" que hace referencia 
+	// Al propio objeto donde se le asignó el objeto objeto sobre
+	// Por ejemplo en este botón se puede  usar:
+		//this.fieldset.disabled=true;
+		//this.style.background = "green";
+		//this.style.border = "5px solid black";
+	// Obviamente también se puede hacer referencia a la variable "stop",
+	// Y hace exáctamente lo mismo
+
+	//	start.fieldset.disabled=true;
+		start.style.background = "green";
+		start.style.border = "10px solid black";
+
+	stop.style.background = "grey";
+	stop.style.border = "1px solid black";
+
+	stop.ariaDisabled = false;  
+	start.ariaDisabled = true; 
+
+	//alert("Has iniciado el intervalo en bucle");
 });
 
 

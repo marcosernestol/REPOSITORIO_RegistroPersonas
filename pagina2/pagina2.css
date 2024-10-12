@@ -31,6 +31,28 @@
      border-radius: 30px;
  }
 /* -----------------------  el punto hace referencia a clases .class  -------------------   */
+
+.perfilUsuario {
+    position: absolute;
+    width: 60px;
+    height: 62px;
+    left: 1317px;
+    top: 38px;
+}
+
+.menuInicial {
+    position: absolute;
+    width: 634px;
+    height: 55px;
+    left: 424px;
+    top: 45px;
+    background: #C4C4C4;
+}
+
+
+
+
+
 /* -----------------------  el "Gato" hace referencia al ID del elemento TAG -------------------   */
  
  

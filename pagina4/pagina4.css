@@ -31,7 +31,6 @@ footer {
     border-radius: 30px;
 }
 /* -----------------------  el punto hace referencia a clases .class  -------------------   */
-
 .perfilUsuario {
     position: absolute;
     width: 60px;
@@ -49,13 +48,4 @@ footer {
     background: #C4C4C4;
 }
 
-
 /* -----------------------  el "Gato" hace referencia al ID del elemento TAG -------------------   */
-
-  /* ------  el # "Gatito" hace referencia al Identificador ( id )  -------------------   */
- 
-  #start{
-   /*
-    ariaDisabled: true;  
-    */
-}
