@@ -155,9 +155,9 @@ window.addEventListener('load',function(){
 	}
     });
   
+   
 
-
-
+	
 
 });  // Se cierra el evento 'load'
 
