@@ -124,15 +124,16 @@ window.addEventListener('load',function(){
  var div_profesor = document.querySelector("#profesor");
 
 
-
+                 // Aqui Vamo sa ENCADENAR varias promesas
+                 // lo que se conoce como PROMISE CHAINING
 	getUsuarios()
 		.then(data => data.json() // Esta es la Primer promesa, que Toma los datos regresados por la funcion getUsuarios()
                                    // pero OJO incluye totales, paginas, etc 
         )
 
-		.then(users => {        // En el segundo Then 
-			mostrarListadoUsuarios2(users.data);
-			return getInfo();
+		.then(users => {        // En el segundo Then que espera la Información del Profesor Victor Robles
+			// mostrarListadoUsuarios2(users.data);
+			return getInfoProfesor(); // La funcion getInfoProfesor() 
 		})
 
 
@@ -152,7 +153,8 @@ window.addEventListener('load',function(){
 
 
 		.catch(error => {
-			alert("Error en las peticiones");
+            console.log(error);
+			alert("Aqui caché el Error con catch() ; Hay algun Error en las peticiones");
 		});
 		
 
@@ -162,12 +164,14 @@ window.addEventListener('load',function(){
     return fetch('https://reqres.in/api/users');
  }
 
+
  function getJanet(){ // Es una funcion que regresa ESPECIFICAMENTE el usuario 2
                       // Que es Janet Weaver
 	return fetch('https://reqres.in/api/users/2');
  }
 
- function getInfo(){  // Creo que una Promesa regresa datos, espero no estar equivocandome
+
+ function getInfoProfesor(){  // Creo que una Promesa regresa datos, espero no estar equivocandome
                       // Por ejemplo, esta funcion regresará una "promesa" con los datos de victor robles 
 	var profesor = { nombre: 'Víctor', apellidos: 'Robles',	url: 'https://victorroblesweb.es'};
 
@@ -177,12 +181,11 @@ window.addEventListener('load',function(){
 		setTimeout(function(){
 			profesor_string = JSON.stringify(profesor);
 
-			if(typeof profesor_string != 'string' || profesor_string == '') return reject('error 1');
+			if(typeof profesor_string != 'string' || profesor_string == '') return reject('error 1'); // reject lo que hace es denegar la Promesa y en este caso retorne un mensaje de error
 
-			return resolve(profesor_string);
+			return resolve(profesor_string); // resolve regresa un valor válido coando sí se puede procesar todo bién
 
-		}, 3000);
-		
+		}, 3000); // se metió un lapso de tiempo de 3 segundos para EVIDENCIAR como se van esperando las promesas.
 	});
  }
 
@@ -217,6 +220,46 @@ window.addEventListener('load',function(){
 	document.querySelector("#janet .loading").style.display = 'none';
  }
 
+
+
+// En Java script, cualquier código Susceptible a fallo se puede meter en un Try-catch, de esta forma:
+ try{  // El Try Intenta ejecutar lo que está entre llaves
+	var year = 2019;
+	alert(year);
+    console.log(decodeURIComponent("https://www.google.com.%mx/maps"));  // Esta función decoderURIComponent , evalúa y decodifica la URI, aqui debe marcar error por un caracter % INCORRECTO                                                // si NO es válida manda un error de lo contrario manda un string a manera de validación correcta
+	var vector = new Array(99999999999999999); // El error es que un Array no puede tener tantos elementos como 99999999999999999
+ }catch(error){  // Y si algo falla, entonces se va al catch.
+	console.log(error)
+	alert("Probando Try-Catch:  A ocurrido un error en el código");
+   } 
+
+
+
+
+
+// manejo de fechas 
+   
+var fecha = new Date();
+
+var year = fecha.getFullYear();
+var mes = fecha.getMonth();
+var dia = fecha.getDate();
+var hora = fecha.getHours();
+
+// Usamos interpolación de variables :)
+var textoHora = `
+	El año es: ${year}
+	El mes es: ${mes}
+	El dia es: ${dia}
+	La hora es: ${hora}
+`;
+
+console.log(textoHora);
+this.alert(textoHora);
+
+// https://www.w3schools.com/js/js_math.asp  
+// Hay una muy , muy amplia documentacion de funciones matemáticas de Javacript, y en general de muchos lenguajes.
+console.log(Math.ceil(Math.random()*10000));  
 
 
 
