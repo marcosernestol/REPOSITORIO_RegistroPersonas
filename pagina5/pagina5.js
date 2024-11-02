@@ -104,13 +104,6 @@ window.addEventListener('load',function(){
 
 
 
-
-
-
-
-
-
-
  console.log("------->>>>> AHORA VAMOS A TRABAJAR CON PROMESAS  <<<<<--------");
 // ----------->>>>>>>>>>>>  ---                                        --------<<<<<<<<<<<<<<<--------             
 // ----------->>>>>>>>>>>>  ---   AHORA VAMOS A TRABAJAR CON PROMESAS  --------<<<<<<<<<<<<<<<--------
@@ -260,6 +253,35 @@ this.alert(textoHora);
 // https://www.w3schools.com/js/js_math.asp  
 // Hay una muy , muy amplia documentacion de funciones matemáticas de Javacript, y en general de muchos lenguajes.
 console.log(Math.ceil(Math.random()*10000));  
+
+
+
+
+
+
+
+// xxxxxxxxxxxxxxxxxxx  ESTE ES EL EJEMPLO CONSULTANDO MI PRIMER WS  XXXXXXXXXXXXXXXXXXXXX
+
+
+
+var usuarios_desde_WS_RegistroPersonas = []; 
+
+fetch('http://192.168.40.1:5999/obtenerUsuarios_RegistroPersona') //   ,{mode:'no-cors'}
+
+.then(data => {data.json();console.log('88888888888888888888888888');console.log(data);})  
+
+/*
+.then( miListaUsuarios => {   
+   usuarios_desde_WS_RegistroPersonas = miListaUsuarios; 
+    console.log("Datos desde WS RegistroPersona :) ->>>> ");
+    console.log(usuarios_desde_WS_RegistroPersonas);  
+ })
+ */
+ ; 
+
+ 
+
+
 
 
 
