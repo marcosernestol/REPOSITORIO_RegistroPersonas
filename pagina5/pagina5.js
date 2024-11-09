@@ -250,6 +250,8 @@ var textoHora = `
 console.log(textoHora);
 this.alert(textoHora);
 
+
+
 // https://www.w3schools.com/js/js_math.asp  
 // Hay una muy , muy amplia documentacion de funciones matemáticas de Javacript, y en general de muchos lenguajes.
 console.log(Math.ceil(Math.random()*10000));  
@@ -265,18 +267,24 @@ console.log(Math.ceil(Math.random()*10000));
 
 
 var usuarios_desde_WS_RegistroPersonas = []; 
+//fetch('http://192.168.40.1:5999/obtenerUsuarios_RegistroPersona')
+fetch('http://localhost:5999/obtenerUsuarios_RegistroPersona')
 
-fetch('http://192.168.40.1:5999/obtenerUsuarios_RegistroPersona') //   ,{mode:'no-cors'}
+.then(data => {
+    data.json();
+   usuarios_desde_WS_RegistroPersonas = miListaUsuarios.respuesta; 
+    console.log('88888888888888888888888888>> melb ya Pasé >> ');
+    console.log(data);
+ })  
 
-.then(data => {data.json();console.log('88888888888888888888888888');console.log(data);})  
 
-/*
 .then( miListaUsuarios => {   
-   usuarios_desde_WS_RegistroPersonas = miListaUsuarios; 
     console.log("Datos desde WS RegistroPersona :) ->>>> ");
     console.log(usuarios_desde_WS_RegistroPersonas);  
  })
- */
+ .catch( error => {console.log('88888888888888888888888888>> melb mi error >> ' + error);
+                    alert('Se Presentó un Error en mi primer Fetch');});
+
  ; 
 
  
