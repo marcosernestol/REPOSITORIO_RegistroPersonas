@@ -258,37 +258,18 @@ console.log(Math.ceil(Math.random()*10000));
 
 
 
-
-
-
-
-// xxxxxxxxxxxxxxxxxxx  ESTE ES EL EJEMPLO CONSULTANDO MI PRIMER WS  XXXXXXXXXXXXXXXXXXXXX
-
-
-
+// xxxxxxxxxxxxxxxxxxx  ESTE ES EL EJEMPLO CONSULTANDO MI PRIMER WS , POR FIN !!!! SI FUNCIONÓ !!!   XXXXXXXXXXXXXXXXXXXXX
 var usuarios_desde_WS_RegistroPersonas = []; 
 //fetch('http://192.168.40.1:5999/obtenerUsuarios_RegistroPersona')
-fetch('http://localhost:5999/obtenerUsuarios_RegistroPersona')
-
+fetch('http://localhost:5999/api/RegistroPersona')
+.then(data =>  data.json())
 .then(data => {
-    data.json();
-   usuarios_desde_WS_RegistroPersonas = miListaUsuarios.respuesta; 
-    console.log('88888888888888888888888888>> melb ya Pasé >> ');
-    console.log(data);
- })  
-
-
-.then( miListaUsuarios => {   
-    console.log("Datos desde WS RegistroPersona :) ->>>> ");
-    console.log(usuarios_desde_WS_RegistroPersonas);  
- })
- .catch( error => {console.log('88888888888888888888888888>> melb mi error >> ' + error);
+     usuarios_desde_WS_RegistroPersonas = data.RegistroPersona;
+     console.log(" 1-1-1-1-1-1-1-1-1-1-1->> usuarios_desde_WS_RegistroPersonas ");
+     console.log(usuarios_desde_WS_RegistroPersonas);
+    })
+ .catch( error => {console.log('8888888 >> melb mi error >> ' + error);
                     alert('Se Presentó un Error en mi primer Fetch');});
-
- ; 
-
- 
-
 
 
 
