@@ -7,3 +7,13 @@ lo va a ignorar porque lo puse dentro del archivo .gitignore
 aunque haga cambios en este archivo, no lo debe tomar en cuenta.
 
 aunque vuelva a modificarlo
+
+
+----------------------------------------------------------------
+
+Para correr la aplicación, abrir con Visual Studio , y desde la terminal cmd o node Usar La opción 
+> ng serve -o  	 (Funciona solo para un proyecto ANGULAR, Desde una terminal “node” o “cmd”)
+
+
+ Pero Para DESARROLLO a mí me funcionó la opción de  “Go Live” 
+( Está muy padre la librería "LIVE SERVER" - una vez instalada solo presionar opción "Go Live")

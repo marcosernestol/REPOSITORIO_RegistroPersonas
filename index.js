@@ -1,11 +1,34 @@
 'use strict' // Para que se use la notación estrícta
 
+
+// La opción > ng serve -o   (Funciona solo para un proyecto ANGULAR, Desde una terminal “node” o “cmd”)
+// Pero Para DESARROLLO ( en proyectos que no usan ANGULAR), 
+//      Está muy padre la librería "LIVE SERVER" - una vez instalada solo presionar opción "Go Live"
+
 window.addEventListener('load',function(){
 //  INTERESANTE:  También funciona si la declaramos asi:
 //  window.addEventListener('load',()=>{
 
-   console.log("Inicio OK");
+   console.log("Inicio OK, Pagina Inicial");
   //alert("Inicio OK");
+
+
+// XXXXXXXXXXXX   CON ESTO ESTARIA CONSULTANDO UN PRIMER WS .....   ( Apoco SI TILIN !!! ???  )   XXXXXXXXXXXXXXXXXX
+// xxxxxxxxxxxxx    ASI DE SIMPLE ,  CONSULTANDO MI PRIMER WS ,   POR FIN !!!! SI FUNCIONÓ !!!   XXXXXXXXXXXXXXXXXX
+    var usuarios_desde_WS_RegistroPersonas = []; 
+    fetch('http://localhost:5999/api/RegistroPersona')
+    .then(data =>  data.json())
+    .then(data => {
+                    usuarios_desde_WS_RegistroPersonas = data.RegistroPersona;
+                    console.log(usuarios_desde_WS_RegistroPersonas);
+                    console.table(usuarios_desde_WS_RegistroPersonas);
+                    console.log({usuarios_desde_WS_RegistroPersonas});
+                  })
+    .catch( error => {console.log('8888888 >> melb mi error >> ' + error);
+                    alert('Se Presentó un Error en mi primer Fetch');});
+// aqui termina la consulta al WS , así de simple.
+
+
 
 // Primero Obtenemos el objeto del formulario
 var miFormulario = document.querySelector("#primerFormulario");
