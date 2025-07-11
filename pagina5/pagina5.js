@@ -1,11 +1,9 @@
 
-
-
 'use strict' // Para que se use la notación estrícta
 
-window.addEventListener('load',function(){
+window.addEventListener('load',()=>{
 //  INTERESANTE:  También funciona si la declaramos asi:
-//  window.addEventListener('load',()=>{
+//  window.addEventListener('load',function(){
 
   console.log("Pagina5");
 
